@@ -252,3 +252,12 @@ class Beans():
 
 ## Result:
     Thus, the program has executed successfully.
+
+
+
+## REVIEW PAGE FOR MODULE
+
+
+<img width="1919" height="879" alt="image" src="https://github.com/user-attachments/assets/8a10967c-e5bd-4fbc-9f94-4790fa6e211d" />
+
+    
