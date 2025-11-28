@@ -1,12 +1,121 @@
-# 🐍 Python OOP: Abstract Class & Method Example
+# # A) Python OOP: Polymorphism with Classes
 
-## 🎯 AIM
+##  AIM
+
+To create two specific classes — `Beans` and `Mango`. Then, create a **generic function** that can accept any object and determine its **type** (Fruit or Vegetable) and **color**, using polymorphism.
+
+---
+
+##  ALGORITHM
+
+1. **Create Class `Beans`**:
+   - Define `type()` method that prints `"Vegetable"`.
+   - Define `color()` method that prints `"Green"`.
+
+2. **Create Class `Mango`**:
+   - Define `type()` method that prints `"Fruit"`.
+   - Define `color()` method that prints `"Yellow"`.
+
+3. **Define Generic Function `func(obj)`**:
+   - Call `obj.type()` and `obj.color()` — this works with both `Beans` and `Mango` objects, showcasing **polymorphism**.
+
+4. **Create Objects**:
+   - Instantiate `Beans` and `Mango`.
+   - Pass them to `func()` and execute the program.
+
+---
+
+##  Program:
+```
+class Beans(): 
+       def type(self): 
+         print("Vegetable") 
+       def color(self):
+         print("Green") 
+  class Mango(): 
+       def type(self): 
+         print("Fruit") 
+       def color(self): 
+         print("Yellow")      
+  def func(obj): 
+      obj.type()
+      obj.color()
+  obj_Beans=Beans()
+  obj_mango=Mango()
+  func(obj_Beans) 
+  func(obj_mango)
+```
+## Output:
+
+![503985540-0d05e38f-18f5-4e8e-a845-158c5380311e](https://github.com/user-attachments/assets/81578499-42dd-43db-ba32-1b155b98d4c6)
+
+## Result:
+    Thus, the program has executed successfully.
+
+# B) Python OOP: Operator Overloading (Less Than `<`)
+
+##  AIM
+
+To write a Python program that demonstrates **operator overloading** by overloading the **less than (`<`)** operator using a custom class.
+
+---
+
+##  ALGORITHM
+
+1. **Create Class `A`**:
+   - Define the `__init__()` method to initialize the object with a value `a`.
+
+2. **Overload the `<` Operator**:
+   - Define the `__lt__()` method with logic:
+     - If `self.a < o.a`, return `"ob1 is less than ob2"`
+     - Else, return `"ob2 is less than ob1"`
+
+3. **Create Objects**:
+   - Instantiate two objects `ob1` and `ob2` with values.
+
+4. **Use `<` Operator**:
+   - Use `print(ob1 < ob2)` to trigger the overloaded behavior.
+
+---
+
+##  Program:
+```
+class A:
+      def __init__(self,value):
+          self.value=value
+      def __lt__(self,other):
+          if isinstance(other,A):
+              return self.value<other.value
+          return NotImplemented
+  ob1=A(20)
+  ob2=A(10)
+  if ob2<ob1:
+      print("ob2 is less than ob1")
+  else:
+      print("ob1 is less than ob2")
+```
+## Output:
+
+![503985405-fd35e148-e435-4a94-b005-a36c745669d4](https://github.com/user-attachments/assets/d9c4b496-1bee-47e2-b401-caccf16aab51)
+
+## Result:
+   Thus, the program has executed successfully.
+
+
+
+
+
+
+
+#  C) Python OOP: Abstract Class & Method Example
+
+## AIM
 
 To create an **abstract class** named `Shape` with an **abstract method** `calculate_area`, and implement this method in two subclasses: `Rectangle` and `Circle`.
 
 ---
 
-## 🧠 ALGORITHM
+##  ALGORITHM
 
 1. **Import ABC module**:
    - Use `from abc import ABC, abstractmethod` to define abstract classes and methods.
@@ -28,7 +137,7 @@ To create an **abstract class** named `Shape` with an **abstract method** `calcu
 
 ---
 
-## 💻 Program:
+##  Program:
 ```
 from abc import ABC, abstractmethod
   import math
@@ -60,15 +169,15 @@ from abc import ABC, abstractmethod
    Thus, the program is executed successfully.
 
 
-# 🐍 Python OOP: Encapsulation with Private Members
+# D) Python OOP: Encapsulation with Private Members
 
-## 🎯 AIM
+##  AIM
 
 To implement **Encapsulation** in Python by defining a class `Rectangle` with **private member variables** `__length` and `__breadth`.
 
 ---
 
-## 🧠 ALGORITHM
+##  ALGORITHM
 
 1. **Define the Class**:
    - Create a class `Rectangle` with two private attributes: `__length` and `__breadth`.
@@ -84,7 +193,7 @@ To implement **Encapsulation** in Python by defining a class `Rectangle` with **
 
 ---
 
-## 💻 Program:
+##  Program:
 ```
 class Rectangle:
       def __init__(self, length, breadth):
@@ -110,12 +219,12 @@ class Rectangle:
    Thus, the program has executed successfully.
 
 
-# 🐟 Method Overriding-Fish and Shark Class Inheritance in Python
+# E) Method Overriding-Fish and Shark Class Inheritance in Python
 
-## 🧠 AIM:
+##  AIM:
 To write a Python program that demonstrates class inheritance by creating a parent class `Fish` with a method `type`, and a child class `Shark` that overrides the `type` method.
 
-## 📋 ALGORITHM:
+##  ALGORITHM:
 
 1. Define the `Fish` class with a method named `type()` that prints `"fish"`.
 2. Define the `Shark` class as a subclass of `Fish`, and override the `type()` method to print `"shark"`.
@@ -125,7 +234,7 @@ To write a Python program that demonstrates class inheritance by creating a pare
 6. Within the loop, call the `type()` method using the loop variable.
 7. Output will demonstrate method overriding: printing `"fish"` and `"shark"` accordingly.
 
-## 💻 PROGRAM:
+##  PROGRAM:
 ```
 class Fish:
     def type(self):
@@ -149,115 +258,3 @@ for fish in (obj_goldfish, obj_hammerhead):
   Thus, the program has executed successfully.
 
 
-# 🐍 Python OOP: Operator Overloading (Less Than `<`)
-
-## 🎯 AIM
-
-To write a Python program that demonstrates **operator overloading** by overloading the **less than (`<`)** operator using a custom class.
-
----
-
-## 🧠 ALGORITHM
-
-1. **Create Class `A`**:
-   - Define the `__init__()` method to initialize the object with a value `a`.
-
-2. **Overload the `<` Operator**:
-   - Define the `__lt__()` method with logic:
-     - If `self.a < o.a`, return `"ob1 is less than ob2"`
-     - Else, return `"ob2 is less than ob1"`
-
-3. **Create Objects**:
-   - Instantiate two objects `ob1` and `ob2` with values.
-
-4. **Use `<` Operator**:
-   - Use `print(ob1 < ob2)` to trigger the overloaded behavior.
-
----
-
-## 💻 Program:
-```
-class A:
-      def __init__(self,value):
-          self.value=value
-      def __lt__(self,other):
-          if isinstance(other,A):
-              return self.value<other.value
-          return NotImplemented
-  ob1=A(20)
-  ob2=A(10)
-  if ob2<ob1:
-      print("ob2 is less than ob1")
-  else:
-      print("ob1 is less than ob2")
-```
-## Output:
-
-![503985405-fd35e148-e435-4a94-b005-a36c745669d4](https://github.com/user-attachments/assets/d9c4b496-1bee-47e2-b401-caccf16aab51)
-
-## Result:
-   Thus, the program has executed successfully.
-
-
-# # 🐍 Python OOP: Polymorphism with Classes
-
-## 🎯 AIM
-
-To create two specific classes — `Beans` and `Mango`. Then, create a **generic function** that can accept any object and determine its **type** (Fruit or Vegetable) and **color**, using polymorphism.
-
----
-
-## 🧠 ALGORITHM
-
-1. **Create Class `Beans`**:
-   - Define `type()` method that prints `"Vegetable"`.
-   - Define `color()` method that prints `"Green"`.
-
-2. **Create Class `Mango`**:
-   - Define `type()` method that prints `"Fruit"`.
-   - Define `color()` method that prints `"Yellow"`.
-
-3. **Define Generic Function `func(obj)`**:
-   - Call `obj.type()` and `obj.color()` — this works with both `Beans` and `Mango` objects, showcasing **polymorphism**.
-
-4. **Create Objects**:
-   - Instantiate `Beans` and `Mango`.
-   - Pass them to `func()` and execute the program.
-
----
-
-## 💻 Program:
-```
-class Beans(): 
-       def type(self): 
-         print("Vegetable") 
-       def color(self):
-         print("Green") 
-  class Mango(): 
-       def type(self): 
-         print("Fruit") 
-       def color(self): 
-         print("Yellow")      
-  def func(obj): 
-      obj.type()
-      obj.color()
-  obj_Beans=Beans()
-  obj_mango=Mango()
-  func(obj_Beans) 
-  func(obj_mango)
-```
-## Output:
-
-![503985540-0d05e38f-18f5-4e8e-a845-158c5380311e](https://github.com/user-attachments/assets/81578499-42dd-43db-ba32-1b155b98d4c6)
-
-## Result:
-    Thus, the program has executed successfully.
-
-
-
-## REVIEW PAGE FOR MODULE
-
-
-<img width="1919" height="879" alt="image" src="https://github.com/user-attachments/assets/8a10967c-e5bd-4fbc-9f94-4790fa6e211d" />
-
-    
